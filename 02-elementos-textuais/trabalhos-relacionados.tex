@@ -1,0 +1,130 @@
+% -----------------------------------------------------------------------------
+% Trabalhos Relacionados
+% -----------------------------------------------------------------------------
+
+\chapter{Trabalhos Relacionados}
+\label{chap:trabRelac}
+
+Na literatura são encontrados trabalhos referentes a arquitetura de sistemas de visualização 
+no contexto de dados governamentais abertos.  Por exemplo, \citeonline{graves2013} mostram 
+como o uso de visualizações podem beneficiar a população que não possui conhecimento técnico 
+no contexto de DGA. Além disso os autores demonstram a necessidade de criar mecanismos de 
+exploração para navegar por dados e metadados e quais as funcionalidades uma ferramenta deve 
+contemplar para facilitar a criação de visualizações.
+
+Para isso são relatadas três fases em que problemas relacionados a visualizações aparecem, 
+como tratar esses problemas e a apresentação de um protótipo que os resolvem. A primeira fase 
+é a de criação, quando ocorre o processamento dos dados que serão usados. Nessa fase deve-se 
+resolver questões sobre como tratar dados em formatos diversos, e como combinar dados de 
+diferentes bases. A segunda é a fase de exploração, o maior problema nessa fase é a falta de 
+informação que garante a qualidade da visualização, como a origem dos dados e o histórico de 
+alterações feitas no conjunto de interesse. A última é a fase de adaptar a visualização para 
+gerar outros conhecimentos. Nessa fase devem ser tratados problemas referentes a capacidade 
+de modificação dos dados implícitos na visualização, por exemplo, utilizar a média de uma 
+métrica no lugar da mediana \cite{graves2013}.
+
+O protótipo proposto por \citeonline{graves2013} utiliza os princípios de \textit{linked data} 
+para integrar os dados e torná-los legíveis tanto para humanos quanto para máquinas. Além 
+disso, possui uma interface gráfica que permite a criação de visualizações.
+
+Também seguindo os princípios de \textit{linked data}, \citeonline{hoxha2011open} propõem a 
+utilização de  tecnologias da web semântica para realizar a integração entre dados de 
+diferentes organizações governamentais. Os autores propõem uma abordagem composta por três 
+módulos, o primeiro é responsável por modelar uma ontologia e converter os dados não 
+processados utilizando o formato do RDF. O segundo é uma interface para consulta a essa base 
+de conhecimento, composto por uma interface gráfica e mecanismo para consultas utilizando o 
+\textit{Sparql Protocol and RDF Query Language} (SPARQL). O terceiro módulo é uma ferramenta 
+de visualização que faz uso dessa interface de consulta.  Finalmente, os autores sugerem uma 
+implementação composta por quatro etapas: processamento dos dados, agregação da informação, 
+visualização gráfica e contribuição da comunidade.
+
+Assim como os trabalhos anteriores, \citeonline{ding2010data}, vêm trabalhando em uma 
+iniciativa para integrar os dados do Data.gov \footnote{ http://www.data.gov/} (página web 
+mantida pelo governo dos Estados Unidos da América, no qual dados referentes ao governo são 
+disponibilizados) utilizando os princípios de \textit{linked data}. Os autores mostram como 
+as tecnologias de web semântica são utilizadas para converter e integrar esses dados. Para 
+isso quatro problemas são tratados: (1) como tornar os dados capazes de fazer parte da 
+nuvem do \textit{linked data}, (2) como conectar esses dados entre si e com fontes externas, 
+(3) como tornar esses dados utilizáveis para usuários e desenvolvedores e (4) como preservar 
+o histórico de dados \cite{ding2010data}.
+
+A solução apresentada por \citeonline{ding2010data} começa tratando das transformações 
+necessárias para adequar os dados, isso é feito através da conversão para o formato RDF. 
+Após isso os dados são enriquecidos através de processos semiautomáticos no qual os valores 
+semânticos são associados a URIs que possuem relevância, para isso é utilizado o Semantic 
+MediaWiki, que permite que usuários colaborem na edição de conteúdos semânticos. Esses dados 
+são disponibilizados através de um \textit{webservice} SPARQL que permite a integração dos 
+dados com APIs convencionais, como a Google Visualization API. Por fim é discutida a 
+importância de metadados, que devem permitir avaliar o histórico dos dados, desde sua origem 
+até qualquer modificação realizada até o presente.
+
+Fora do contexto dos DGAs também existem trabalhos que tratam da arquitetura de sistemas de 
+visualização. \citeonline{viegas2007} discutem o desenho e desenvolvimento do ManyEyes, um 
+\textit{website} no qual usuários podem enviar dados, criar visualizações interativas e 
+discutir tais visualizações. O objetivo é permitir a colaboração e análise de dados de forma 
+social.
+
+Segundo os autores, as decisões de design envolvem três aspectos; (1) a visualização da 
+informação, (2) a coleta de dados e manipulação por parte dos usuários, e (3) a colaboração 
+de forma social. O site incentiva os usuários a disponibilizarem os metadados e oferece 
+suporte para dados no formato de tabelas e texto não estruturado \cite{viegas2007}. 
+Por fim os autores discutem os tipos de visualização disponibilizados, como é feito o 
+mapeamento dos dados para as visualizações, e os aspectos sociais da ferramenta.
+
+Trabalhos como o realizado por \citeonline{tang2004}, abordam decisões de projeto, para a 
+arquitetura de sistemas de visualização de dados. Para isso, \citeonline{tang2004} discutem 
+os desafios enfrentados no contexto do Rivet 
+\footnote{https://graphics.stanford.edu/projects/rivet/}, um ambiente para desenvolvimento de 
+visualizações. Inicialmente são discutidos três aspectos fundamentais: (1) o modelo de dados, 
+(2) a forma de acesso, ou seja, como os dados podem ser importados para a ferramenta, e (3) 
+as capacidades de transformação que devem existir. 
+
+Em relação ao modelo de dados é discutido as vantagens e desvantagens do modelo relacional, 
+comumente utilizado na implementação de sistemas. Para a forma de acesso os autores discutem 
+a importância de qualquer dado importado parecer igualmente expressivo para os usuários, ou 
+seja, independente do formato a informação armazenada deve ser a mesma. Para isso eles 
+disponibilizam diversas formas de se importar dados, passando por conversores CSV até 
+drivers para conexão com banco de dados SQL. Quando discutindo os tipos de transformação, 
+os autores mostram algumas opções que parecem ser comuns no processo de análise, e, 
+portanto, essenciais em um sistema de visualização, como agregação e contagem, ordenação e 
+filtros \cite{tang2004}. Além desses aspectos também são tratadas questões como a 
+importância de metadados, a modularização na arquitetura e pôr fim a forma de especificação 
+para gerar as visualizações.
+
+Para melhor compreender as ferramentas apresentadas, o Quadro 1 sintetiza as principais 
+características das mesmas.
+
+\begin{quadro}[!htb]
+    \centering
+    \caption{Comparação entre os sistemas encontrados na literatura}
+    \label{quadro:comparativo}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+        \hline
+Referência & Modelo de Dados                & Forma de acesso aos dados            & Formato de importação dos dados                   & Importação de dados por usuários & Atualização colaborativa da base de dados & Disponibili- zação de metadados \\
+        \hline
+\citeonline{graves2013}          & Linked Data                    & Interface gráfica                    & Não especificado                                  & Não especificado                 & Não especificado                          & Sim                           \\
+        \hline          
+\citeonline{hoxha2011open}         & Linked Data                    & Interface gráfica e consultas SPARQL & Diferentes formatos (XML, CSV, texto)             & Não                              & Não                                       & Sim                           \\
+        \hline
+\citeonline{ding2010data}          & Linked Data                    & Webservice SPARQL                    & CSV                                               & Não                              & Não                                       & Sim                           \\
+        \hline
+\citeonline{viegas2007}         & Tabela e texto não estruturado & Interface gráfica                    & Texto separado por tabulação.                     & Sim                              & Não                                       & Sim                           \\
+        \hline
+\citeonline{tang2004}         & Relacional                     & API REST                             & CSV, MDX e conexões direta com banco de dados SQL & Sim                              & Não                                       & Sim                           \\
+        \hline   
+    \end{tabular}
+    \fonte{O Autor}
+\end{quadro}
+
+Embora os trabalhos apresentados contemplem informações sobre a infraestrutura que suporta 
+os sistemas de visualização de dados, os autores não detalham os projetos das arquiteturas. 
+Também é possível notar que, embora enalteçam a importância do aspecto social na análise de 
+dados governamentais abertos, não propõem alternativas concretas que permitam a colaboração 
+nas fases mais elementares do processo de análise, por exemplo, durante a inserção ou o 
+gerenciamento dos dados.
+
+A ferramenta aqui proposta busca dar suporte a sistemas de visualização colaborativos e 
+estender a capacidade de colaboração para além da geração e análise de visualizações. Ou 
+seja, permitir, de forma colaborativa, o processamento e integração de dados distribuídos 
+e estabelecer relacionamento entre esses dados. Além disso, esse trabalho irá propor uma 
+arquitetura que permita o processamento de dados em larga escala.

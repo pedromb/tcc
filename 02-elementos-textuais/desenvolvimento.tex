@@ -1,0 +1,60 @@
+\chapter{Desenvolvimento}
+\label{chap:desenvolvimento}
+
+Neste capítulo serão apresentadas todas as etapas referentes ao desenvolvimento da ferramenta
+WikiOlapBase, que permite a integração de dados abertos de forma colaborativa. Na seção
+\ref{sec:requisitos} serão explicitados os requisitos levantados para a ferramenta. 
+Posteriormente, na seção \ref{sec:arquitetura} será mostrada a arquitetura proposta para o 
+WOB. Finalmente na seção \ref{sec:wob} a ferramenta será apresentada, ainda nessa seção será 
+feita uma análise comparativa entre o WOB e as ferramentas encontradas na literatura.
+
+\section{Levantamento de Requisitos}
+\label{sec:requisitos}
+
+Essa etapa busca definir as funcionalidades e características do software proposto. Esse 
+levantamento ocorreu a partir da revisão da literatura e através de uma reunião de 
+\textit{brainstorming} no dia 29 de abril de 2016 com três especialistas que possuem mais 
+de oito anos de experiência na área de processamento e análise de dados. O resultado gerado 
+foi a lista de requisitos mostrada no Quadro \ref{quadro:requisitos}.
+
+\begin{quadro}[!htb]
+    \centering
+    \caption{Requisitos do WOB}
+    \label{quadro:requisitos}
+    \begin{tabular}{|p{2cm}|p{13cm}|}
+        \hline
+        Identificador   &   Requisito \\
+        \hline
+        RF\_1    &  A ferramenta deve permitir a importação de dados, de forma a manter o significado dos dados originais \\   
+        \hline
+        RF\_2    &  A ferramenta deve ser capaz de converter diferentes formatos para o modelo de dados definido. \\        
+        \hline
+        RF\_3    &  A ferramenta deve permitir aos usuários o acesso aos dados presentes no banco de dados integrado da ferramenta. \\
+        \hline
+        RF\_4    &  A ferramenta deve permitir a definição de metadados que se relacionam com um determinado conjunto de dados. \\
+        \hline
+        RF\_5    &  A ferramenta deve ser capaz de estabelecer relacionamento entre conjunto de dados diferentes. \\
+        \hline
+        RF\_6    &  A ferramenta deve aceitar arquivos compactados \\
+        \hline
+        RF\_7    &  A ferramenta deve possibilitar a divisão dos conjuntos de dados em múltiplos arquivos para envio. \\        
+        \hline
+        RF\_8    &  A ferramenta deve disponibilizar uma interface para que outras aplicações acessem os dados presentes na base de dados integrada. \\
+        \hline
+        RNF\_1    &  A ferramenta deve ser capaz de armazenar dados em larga escala \\
+        \hline
+        RNF\_2    &  A ferramenta deve otimizar o tempo de consulta aos dados. \\ 
+        \hline   
+    \end{tabular}
+    \fonte{O Autor}
+\end{quadro}
+
+A partir dos requisitos levantados foi possível escolher as tecnologias que permitiriam atender
+tais requisitos, bem como propor uma arquitetura para a ferramenta. Na seção a seguir essas 
+escolhas são expostas e justificadas.
+
+\section{Arquitetura do WikiOlapBase}
+\label{sec:arquitetura}
+
+\section{WikiOlapBase}
+\label{sec:wob}
