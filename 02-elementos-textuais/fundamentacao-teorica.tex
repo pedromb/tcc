@@ -6,12 +6,15 @@
 \label{chap:fundamentacaoTeorica}
 
 Nesse capítulo são discutidos conceitos fundamentais para o melhor entendimento deste 
-trabalho. A primeira subseção define o conceito de \textit{Big Data} e discute como esse 
+trabalho. A primeira seção define o conceito de \textit{Big Data} e discute como esse 
 cenário impulsionou o desenvolvimento de soluções para armazenamento e gerenciamento de 
 grandes volumes de dados. Também serão analisados novos modelos de dados e sistemas de 
 gerenciamento de banco de dados (SGBDs) que surgiram como alternativa para os modelos 
-convencionais no contexto de \textit{Big Data}. A segunda subseção trata sobre formas de 
-acesso a dados, mostrando os princípios que regem as principais alternativas.
+convencionais no contexto de \textit{Big Data}. A seção \ref{sec:spark} fala 
+sobre ferramentas auxiliares que podem ser utilizadas para processar grandes volumes de dados,
+especificamente serão apresentadas as plataformas Hadoop e Spark. Por fim, a seção 
+\ref{sec:api} trata sobre \textit{web services}, soluções para comunicação entre aplicações, 
+que viabilizam, por exemplo, o acesso a dados que uma ferramenta disponibiliza.
 
 \section{Big Data e NoSQL}
 \label{sec:bigdata}
@@ -37,7 +40,7 @@ Por exemplo, no âmbito de armazenamento, um desafio consiste na modelagem para 
 processamento ao qual esses dados serão submetidos. Isso porque, desde os anos 80, o modelo 
 de dados relacional tem dominado o mercado em diversas implementações de SGBDs. No entanto, 
 o uso de banco de dados relacional gera diversos problemas, no contexto de \textit{Big Data}, 
-devido a questões como escalabilidade, e limitações no armazenamento, não sendo, portanto 
+devido a questões como escalabilidade e limitações no armazenamento, não sendo, portanto 
 adequado para esse cenário \cite{moniruzzaman2013nosql}. Assim, novas alternativas que 
 atendessem a novos requisitos de escalabilidade e disponibilidade se fez necessário, de modo 
 a viabilizar empresas e governos a fazer uso do potencial de \textit{Big Data} 
@@ -52,8 +55,8 @@ comuns, são eles: chave-valor, orientado a documentos, grafos e família de col
 \cite{de2010nosql}.
 
 Bancos de dados do tipo chave-valor armazenam elementos com uma chave identificadora e seu 
-respectivo valor em tabelas, conhecidas como hash tables. Esses valores podem ser textos 
-comuns ou estruturas como listas e conjuntos. São ideais para respostas a requisições 
+respectivo valor em tabelas conhecidas como \textit{hash tables}. Esses valores podem ser 
+textos comuns ou estruturas, como listas e conjuntos. São ideais para respostas a requisições 
 rápidas, uma vez que a busca é realizada apenas pelos valores das chaves. Os SGBDs não 
 relacionais, do tipo chave-valor, abertos mais conhecidos são o Voldemort, do LinkedIn, e o 
 Redis \cite{moniruzzaman2013nosql}.
@@ -86,8 +89,7 @@ A Figura \ref{fig:db-colunar} mostra uma possível modelagem para esse caso. Ess
 armazenamento possui algumas vantagens, como por exemplo a compressão dos dados e a 
 velocidade das operações de leitura. Essa última característica torna os bancos de dados de 
 famílias de colunas ideais para processamento analítico online (OLAP), quando se deseja uma 
-leitura rápida. São exemplos de SGBDs nessa categoria o Cassandra e o HBase 
-\cite{de2010nosql}.
+leitura rápida. São exemplos de SGBDs nessa categoria o Cassandra e o HBase \cite{de2010nosql}.
 
 \begin{figure}[!htb]
     \centering
@@ -99,19 +101,61 @@ leitura rápida. São exemplos de SGBDs nessa categoria o Cassandra e o HBase
 
 
 Cada modelo de dados possui suas vantagens e desvantagens, e a melhor escolha depende do que 
-se deseja alcançar. A partir do momento que é definido um modelo de dados deve-se pensar na 
-forma como os dados serão acessados. Existem diferentes protocolos de comunicação que 
-permitem a troca de informação na web, na próxima seção são mostrados as principais formas
-de comunicação e suas características.
+se deseja alcançar. Apesar das modelagens e SGBDs não relacionais possuirem claras vantagens,  
+elas ainda possuem certas limitações. Por exemplo, a maioria das implementações NoSQL não
+suportam as operações \textit{join} e \textit{order by} \cite{pokorny2013nosql}. 
+Nesse contexto surgem outras plataformas para auxiliar no processamento de grandes volumes 
+de dados e que possuem uma comunicação natural com bancos de dados NoSQL. Na próxima seção 
+apresentamos duas dessas plataformas, o Hadoop e o Spark.
+
+\section{Hadoop e Spark}
+\label{sec:spark}
+
+O Apache Hadoop \footnote{http://hadoop.apache.org/}, também conhecido apenas como Hadoop, 
+é um projeto de código aberto mantido pela Apache Software Foundation, que desenvolve 
+softwares para processamento distribuído de grandes volumes de dados. O ecossistema do 
+Hadoop é composto por quatro módulos:(1) \textit{Hadoop Common}, (2) 
+\textit{Hadoop Distributed File System (HDFS)}, (3) \textit{Hadoop YARN} e (4) 
+\textit{Hadoop Map Reduce} \cite{kumar2014apache}. 
+
+O primeiro são utilitários que dão suporte aos outros módulos. O HDFS é um sistema de 
+arquivos distribuído que permite o armazenamento de grandes volumes de dados em 
+diversos nodos de um \textit{cluster}. As grandes vantagens do HDFS são sua portabilidade, 
+capacidade de armazenamento, custo benefício e tolerância a falhas. O YARN é um 
+\textit{framework} para agendamento de tarefas e gerenciamento de recursos em 
+\textit{cluster}. Por fim, o \textit{Hadoop MapReduce} é um método para distribuir tarefas 
+em múltiplos nodos, o que permite o processamento paralelo e distribuído, tolerante a 
+falhas e de fácil abstração. Como o próprio nome sugere, ele é baseado no \textit{MapReduce}, 
+um modelo de programação e framework introduzido pelo Google \cite{kumar2014apache}. A grande 
+desvantagem do Hadoop é que seu  processamento ocorre em disco, o que limita sua 
+velocidade \cite{shoro2015big}.
+
+Já o Apache Spark\footnote{http://spark.apache.org/}, ou simplesmente Spark, é uma ferramenta 
+de propósito geral para processamento em \textit{cluster} que realiza operações em memória. 
+Essa característica permite o aceleramento da análise de dados, tornando mais rápido 
+tanto operações de escrita quanto processamento de dados, em alguns casos o Spark pode ser 
+até cem vezes mais rápido que o Hadoop. Além disso o Spark possui APIs para diversas 
+linguagens de programação, como Python, Java, Scala e R. Outra vantagem é a existência de 
+diversas ferramentas de alto nível que auxiliam no processamento de dados, como por exemplo 
+a M Lib, uma biblioteca para aprendizado de máquina e o Spark SQL, uma biblioteca que 
+permite, entre outras coisas, a realização de operações como \textit{join} e 
+\textit{order by} em qualquer conjunto de dados, mesmo aqueles originários de bancos de 
+dados NoSQL \cite{shoro2015big}.
+
+Assim, dada uma fonte de dados NoSQL é possível utilizar o Hadoop ou Spark para acessar,
+processar e até mesmo alimentar essa fonte. Por fim, deve-se permitir o acesso aos dados
+já processados que são armazenados, isso pode ser realizado utilizando \textit{web services}. 
+
 
 \section{\textit{Web Services}}
 \label{sec:api}
 
 A troca de informações entre aplicações distribuídas na web é feita através de protocolos de 
-comunicação \cite{schepke2010avaliaccao}. Estes protocolos permitem, entre outras operações, a recuperação 
-de dados de aplicações que possuem esse acesso liberado. Serão discutidos duas das formas de 
-comunicação, conhecidas como \textit{web services}, mais utilizadas, o \textit{Simple Object 
-Access Protocol (SOAP)}, e o \textit{Representational State Transfer (REST)} \cite{lima2012}.
+comunicação \cite{schepke2010avaliaccao}. Estes protocolos permitem, entre outras operações, a 
+recuperação de dados de aplicações que possuem esse acesso liberado. Serão discutidos duas 
+das formas de comunicação, conhecidas como \textit{web services}, mais utilizadas, o 
+\textit{Simple Object Access Protocol (SOAP)}, e o \textit{Representational State 
+Transfer (REST)} \cite{lima2012}.
 
 O SOAP é um protocolo adotado pela W3C que permite invocar aplicações remotas independente de 
 linguagem de programação e plataforma. O protocolo é baseado em XML e utiliza o 
@@ -126,10 +170,11 @@ transportada. No caso de uma mensagem de requisição o corpo pode conter o mét
 chamado e os parâmetros de entrada e saída do método, já para uma mensagem de resposta o 
 corpo contém o resultado (dados) gerado pelo método chamado \cite{suda2003soap}.
 
-O modelo REST foi definido por \citeonline{fielding2000architectural}, que buscou as melhores práticas de 
-arquiteturas de \textit{web services} já existentes e compôs uma nova arquitetura que as 
-reunissem em apenas uma. Essa arquitetura reúne as melhores práticas no que se refere a: 
-(1) cliente/servidor, (2) sistemas de camadas, (3) cache, (4) sem estado \cite{fielding2000architectural}.
+O modelo REST foi definido por \citeonline{fielding2000architectural}, que buscou as melhores 
+práticas de arquiteturas de \textit{web services} já existentes e compôs uma nova arquitetura 
+que as reunissem em apenas uma. Essa arquitetura reúne as melhores práticas no que se refere 
+a: (1) cliente/servidor, (2) sistemas de camadas, (3) cache, (4) sem estado 
+\cite{fielding2000architectural}.
 
 No modelo REST são definidos dois papéis, cliente e servidor. O servidor oferece uma série 
 de serviços do qual o cliente faz uso. Ao receber uma requisição do cliente o servidor decide 
