@@ -5,27 +5,28 @@
 \chapter{Introdução}
 \label{chap:introducao}
 
-Nos últimos anos vêm crescendo a demanda popular por mais transparência das ações 
-governamentais. Em resposta à essa pressão, novas políticas vêm sendo implementadas. 
-Segundo \citeonline{vaz2010dados} as tecnologias de comunicação e informação permitiram a 
-potencialização da promoção de transparência, um processo que se deu em três fases. 
+Com a crescente demanda popular por mais transparência das ações governamentais, novas
+políticas de publicidade dessas ações vêm sendo implementadas. Segundo \citeonline{vaz2010dados}
+as tecnologias de comunicação e informação (TICs) pemitiram a potencialização da promoção
+de transparência, um processo que se deu em três iniciativas, conforme descrito a seguir.
 
-Inicialmente os governos passaram a publicar informações de forma limitada em seus 
-\textit{websites}, ou seja, decidiam o que e como a informação seria vista. A segunda fase 
-se caracteriza pela capacidade de interação entre usuário e as bases de dados governamentais. 
-Era possível elaborar consultas para cruzar e filtrar dados, o que permitiu o acesso a 
-informações mais detalhadas. As propostas anteriores eram limitadas pois não permitiam a 
-obtenção dos dados sem tratamentos, em seu formato original. Surgiu assim o conceito de 
-dados governamentais abertos (DGA), onde além de disponibilizar consultas e relatórios, o 
-governo disponibiliza seus dados em estado bruto o que permite sua livre manipulação, 
-processamento e análise \cite{vaz2010dados}.
+Inicialmente, os governos passaram a publicar informações de forma limitada em seus 
+\textit{websites}, ou seja, decidiam o que e como seria visualizado. Em um segundo momento, 
+visando viabilizar a interação entre os usuários e bases de dados governamentais, a segunda 
+iniciativa de transparência, consistiu em permitir a realização de consultas para cruzamento 
+e filtros dos dados, o que favoreceu o processo de análise das informações. Essas iniciativas 
+eram limitadas, pois não permitiam a obtenção dos dados sem tratamentos, em seu formato original. 
+Surgiu assim o conceito de dados governamentais abertos (DGA), nos quais, além de 
+disponibilizar consultas e relatórios, o governo disponibiliza seus dados em estado bruto
+(i.e., sem pré-processamento), o que permite sua livre manipulação, processamento e 
+análise \cite{vaz2010dados}.
 
 Em meio a esse contexto, foi criada no Brasil a Lei de Acesso à Informação 
 (Lei nº 12.527/2011), que permite a qualquer cidadão a obtenção de dados e informações 
 de qualquer entidade pública. Além disso, essa lei prevê a chamada “Transparência Ativa”, 
 que determina que os órgãos públicos se antecipem aos pedidos e publiquem seus dados na 
-Internet. Com isso foi criado o Portal Brasileiro de Dados Abertos, onde o governo federal 
-disponibiliza dados, em estado bruto, que são de interesse público. 
+Internet. Com isso, foi criado o Portal Brasileiro de Dados Abertos, no qual o 
+governo federal disponibiliza dados, em estado bruto, que são de interesse público. 
 
 No entanto, para a maioria das pessoas interessadas, a disponibilidade de acesso a essas 
 bases de dados não é suficiente para fazer uso das mesmas, a falta de conhecimento técnico, 
@@ -34,22 +35,22 @@ maioria das vezes, os dados são heterogêneos, disponíveis em diversos formato
 volume e nem sempre de fácil entendimento para as pessoas interessadas. Essas características 
 dificultam a integração entre esses dados, o que limita a capacidade de manipulação, 
 combinação e análise dos mesmos \cite{hoxha2011open}. Ou seja, a forma como atualmente esses 
-dados estão disponibilizados não permite a obtenção de informações relevantes sem o uso de 
+dados estão disponibilizados, não permite a obtenção de informações relevantes sem o uso de 
 ferramentas computacionais que auxiliem no processamento, na visualização e análise desses 
 dados \cite{vaz2010dados}. 
 
 Esse contexto gera dois desafios: o primeiro é referente a demanda por uma infraestrutura 
-capaz de processar e integrar esses dados, viabilizando a exploração e análise dessas bases. 
+capaz de processar e integrar os DGA, viabilizando a exploração e análise dessas bases. 
 O segundo é referente a demanda de uma ferramenta, alimentada por essa infraestrutura, capaz 
 de gerar análises e visualizações sem a necessidade de conhecimento técnico do usuário 
 \cite{graves2013}.
 
-Motivado por esses problemas, este trabalho visa propor uma ferramenta colaborativa que 
+Motivado por esses desafios, este trabalho visa propor uma ferramenta colaborativa que 
 seja capaz de processar e integrar dados abertos. Isso significa gerar uma 
-nova base de dados integrada que seja mantida pelos usuários interessados no processamento, 
-na visualização e análise desses dados. O objetivo dessa ferramenta é servir como 
-infraestrutura básica para outras, viabilizando assim, a análise e visualização de grandes 
-volumes de dados mesmo por pessoas sem conhecimento técnico. 
+nova base de dados integrada, que seja mantida pelos usuários interessados no processamento, 
+na visualização e análise desses dados. O objetivo dessa ferramenta é prover uma infraestrutura
+base para outras, de modo a viabilizar a análise e visualização de grandes 
+volumes de dados, mesmo por pessoas sem conhecimento técnico. 
 
 Para alcançar o objetivo proposto, este trabalho foi dividido em duas fases, subdivididas 
 em etapas. A primeira fase consistiu na revisão da literatura acerca de abordagens para 
@@ -57,25 +58,27 @@ processamento, armazenamento e integração de dados no cenário dos DGA, bem co
 dos requisitos da ferramenta. Na segunda fase a arquitetura da ferramenta foi proposta, 
 seguida do seu desenvolvimento e avaliação.
 
-O principal resultado desse projeto foi a construção do WikiOlapBase (WOB), uma ferramenta 
-colaborativa que permite a integração de dados abertos. A viabilização de acesso de qualidade 
-para essas informações tem grande valor para diversos setores da sociedade \cite{vaz2010dados}. 
-Ainda, a partir dos testes de usabilidade realizados foi possível observar que a ferramenta é 
-adequada ao uso e permite a colaboração entre usuários, atingindo, dessa forma, dois de seus
-principais objetivos. Além disso, esse trabalho contribuiu, em termos práticos, ao revisar e 
-implementar soluções inovadoras para processamento e integração de um grande volume de dados, 
-um dos grandes desafios técnicos enfrentados pela área de \textit{Big Data} 
-\cite{jagadish2014}. Em termos científicos este trabalho contribuiu no avanço de 
-tecnologias e abordagens para o processamento e integração de dados, delimitando as 
-vantagens e desvantagens de cada um.
+Em termos de resultados, o Teste de Usabilidade conduzido demonstrou que o WikiOlapBAse é uma
+ferramenta colaborativa, adequado a uso, que auxilia no processo de integração de dados 
+abertos. Além disso, a análise comparativa das ferramentas similares aqui apresentado, também
+é relevante, pois permite uma avaliação nas decisões tomadas, ao se arquitetar uma ferramenta
+para realizar esse tipo de integração.
+
+A principal contribuição prática deste trabalho é a criação de uma ferramenta colaborativa para
+a integração de dados abertos, cujo código fonte está disponível ao público. Além disso, outra
+contribuição, em termos práticos, é a revisão e implementação de soluções inovadoras para
+processamento e integração de grandes volumes de dados, um dos grandes desafios técnicos 
+enfrentados pela área de \textit{Big Data} \cite{jagadish2014}. Em termos científicos, este
+trabalho, contribuiu no avanço de tecnologias e abordagens para processamento e integração
+de dados, delimitando as vantagens e desvantagens de cada um.
 
 O resto deste trabalho se encontra dividido da seguinte forma: o Capítulo 
 \ref{chap:fundamentacaoTeorica} apresenta conceitos e tecnologias fundamentais para o 
 entendimento do trabalho; o Capítulo \ref{chap:trabRelac} explicita outras ferramentas 
-existentes que viabilizam a visualização e análise de dados; o Capítulo \ref{chap:metodologia} 
-indica a metodologia utilizada no desenvolvimento deste trabalho; o Capítulo 
-\ref{chap:desenvolvimento} apresenta o desenvolvimento da ferramenta proposta, desde o 
-levantamento de requisitos, passando pela arquitetura proposta até a apresentação da 
-ferramenta em si; o Capítulo \ref{chap:avaliacao} apresenta a metodologia e resultados 
-gerados a partir da avaliação de usabilidade do WikiOlapBase, por fim, o Capítulo 
+existentes que viabilizam a integração, visualização e análise de dados abertos; o 
+Capítulo \ref{chap:metodologia} indica a metodologia utilizada no desenvolvimento deste 
+trabalho; o Capítulo \ref{chap:desenvolvimento} apresenta o desenvolvimento da ferramenta 
+proposta, desde o levantamento de requisitos, passando pela arquitetura proposta até a 
+apresentação da ferramenta em si; o Capítulo \ref{chap:avaliacao} apresenta a metodologia e 
+resultados gerados a partir da avaliação de usabilidade do WikiOlapBase, por fim, o Capítulo 
 \ref{chap:conclusao} apresenta as conclusões geradas e trabalhos futuros propostos.
