@@ -50,13 +50,13 @@ o histórico de dados \cite{ding2010data}.
 
 A solução apresentada por \citeonline{ding2010data} começa tratando das transformações 
 necessárias para adequar os dados, isso é feito através da conversão para o formato RDF. 
-Após isso, os dados são enriquecidos através de processos semiautomáticos, no qual os valores 
-semânticos são associados a URIs que possuem relevância, para isso é utilizado o Semantic 
-MediaWiki, que permite que usuários colaborem na edição de conteúdos semânticos. Esses dados 
-são disponibilizados através de um \textit{webservice} SPARQL, que permite a integração dos 
-dados com APIs convencionais, como a Google Visualization API. Por fim é discutida a 
-importância de metadados, que devem permitir avaliar o histórico dos dados, desde sua origem 
-até qualquer modificação realizada até o presente.
+Após isso, os dados são enriquecidos através de processos semiautomáticos, nos quais os valores 
+semânticos são associados a identificadores uniformes de recursos (URIs) que possuem 
+relevância, para isso é utilizado o Semantic MediaWiki\footnote{https://www.semantic-mediawiki.org/}, 
+que permite que usuários colaborem na edição de conteúdos semânticos. Esses dados são 
+disponibilizados através de um \textit{webservice} SPARQL, que permite a integração dos dados 
+com APIs convencionais, como a Google Visualization API. Por fim é discutida a importância de 
+metadados, que devem permitir avaliar o histórico dos dados.
 
 Fora do contexto dos DGAs também existem trabalhos que tratam da arquitetura de sistemas de 
 visualização. \citeonline{viegas2007} discutem o desenho e desenvolvimento do ManyEyes, um 
@@ -97,23 +97,24 @@ características das mesmas.
     \centering
     \caption{Comparação entre os sistemas encontrados na literatura}
     \label{quadro:comparativo}
-    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+    \begin{tabular}{|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.5cm}|p{1.5cm}|}
         \hline
-Referência & Modelo de Dados                & Forma de acesso aos dados            & Formato de importação dos dados                   & Importação de dados por usuários & Atualização colaborativa da base de dados & Disponibili- zação de metadados \\
+Referência & Modelo de Dados & Forma de acesso aos dados & Formato de importação dos dados & Importa- ção de dados por usuários & Acesso a base de dados de outros usuários & Disponi- bilização de metadados & Cruza- mento entre dados\footnotemark\\
         \hline
-\citeonline{graves2013}          & Linked Data                    & Interface gráfica                    & Não especificado                                  & Não especificado                 & Não especificado                          & Sim                           \\
+OpenData- Vis - \citeonline{graves2013} & Linked Data & Interface gráfica & Não especificado & Não especificado & Não especificado & Sim & Não \\
         \hline          
-\citeonline{hoxha2011open}         & Linked Data                    & Interface gráfica e consultas SPARQL & Diferentes formatos (XML, CSV, texto)             & Não                              & Não                                       & Sim                           \\
+\citeonline{hoxha2011open} & Linked Data & Interface gráfica e consultas SPARQL & Diferentes formatos (XML, CSV, texto) & Não & Não & Sim & Não \\
         \hline
-\citeonline{ding2010data}          & Linked Data                    & Webservice SPARQL                    & CSV                                               & Não                              & Não                                       & Sim                           \\
+Data-GovWiki - \citeonline{ding2010data} & Linked Data & Web- service SPARQL & CSV & Não & Não & Sim & Não\\
         \hline
-\citeonline{viegas2007}         & Tabela e texto não estruturado & Interface gráfica                    & Texto separado por tabulação.                     & Sim                              & Não                                       & Sim                           \\
+Many Eyes - \citeonline{viegas2007} & Tabela e texto não estruturado & Interface gráfica & Texto separado por tabulação. & Sim & Sim & Sim & Não \\
         \hline
-\citeonline{tang2004}         & Relacional                     & API REST                             & CSV, MDX e conexões direta com banco de dados SQL & Sim                              & Não                                       & Sim                           \\
+Rivet - \citeonline{tang2004} & Relacional & API REST & CSV, MDX e conexões SQL & Sim & Não & Sim & Não \\
         \hline   
     \end{tabular}
     \fonte{O Autor}
 \end{quadro}
+\footnotetext{Utilizando dados enviados por outros usuários} \newpage
 
 Embora os trabalhos apresentados contemplem informações sobre a infraestrutura que suporta 
 os sistemas de visualização de dados, os autores não detalham os projetos das arquiteturas. 

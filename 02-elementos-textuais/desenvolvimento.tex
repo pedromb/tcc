@@ -49,9 +49,9 @@ O resultado gerado foi a lista de requisitos, mostrada no Quadro \ref{quadro:req
     \fonte{O Autor}
 \end{quadro}
 
-A partir dos requisitos levantados foi possível escolher as tecnologias que permitiriam atender
-tais requisitos, bem como propor uma arquitetura para a ferramenta. Na seção a seguir essas 
-escolhas são expostas e justificadas.
+A partir dos requisitos levantados foi possível escolher as tecnologias, bem como propor uma 
+arquitetura, para o desenvolvimento da solução. Na seção a seguir essas escolhas são expostas 
+e justificadas.
 
 \section{Arquitetura do WikiOlapBase}
 \label{sec:arquitetura}
@@ -87,12 +87,12 @@ Para a codificação da ferramenta foi utilizada a linguagem de programação Py
 \textit{framework} Django. Python é uma linguagem de programação popular, que possui suporte 
 para integração com outras linguagens e ferramentas, além de uma variedade de bibliotecas. 
 Já o Django, é um \textit{framework} de código aberto que busca automatizar ao máximo o 
-desenvolvimento, aderindo ao princípio \"não repita a si mesmo\", do inglês 
+desenvolvimento, aderindo ao princípio "não repita a si mesmo", do inglês 
 \textit{don’t repeat yourself (DRY)} \cite{plekhanova2009evaluating}. Também vale ressaltar 
 que para a interface do usuário foram usadas as linguagens 
 \textit{HyperText Markup Language} (HTML), \textit{Cascading Style Sheets (CSS)} e JavaScript.
 
-A arquitetura aqui proposta busca funcionar como infraestrutura básica para ferramentas de
+A arquitetura aqui proposta busca funcionar como infraestrutura base para ferramentas de
 visualização de grandes volumes de dados que fazem uso de operações OLAP, e portanto, 
 o modelo de dados escolhido deve viabilizar isso. Dessa forma, foi escolhido o modelo de 
 família de colunas, pois ele otimiza esse tipo de operações, que tipicamente envolvem
@@ -125,7 +125,7 @@ limitações dos bancos de dados NoSQL, já explorada anteriormente neste trabal
 (na Seção \ref{sec:bigdata}), também foi utilizada a plataforma Spark para realizar uma 
 interface com o Cassandra. A utilização do Spark permite a realização de operações mais 
 complexas sobre os dados, além de tornar ainda mais rápida a leitura e escrita de dados 
-sobre o Cassandra.
+sobre o Cassandra \cite{kolaczkowski2014}.
 
 Finalmente, para o acesso aos dados, foi disponibilizado uma API REST, devido a sua 
 simplicidade e adequação natural a web \cite{maleshkova2010}. A Figura \ref{fig:arquitetura} apresenta o 
@@ -134,7 +134,7 @@ diagrama da arquitetura implementada.
 \begin{figure}[!htb]
     \centering
     \caption{Arquitetura do WikiOlapBase}
-    \includegraphics[width=0.6\textwidth]{./04-figuras/arquitetura}
+    \includegraphics[width=0.7\textwidth]{./04-figuras/arquitetura}
     \fonte{O Autor}
     \label{fig:arquitetura}
 \end{figure}
@@ -143,10 +143,9 @@ diagrama da arquitetura implementada.
 \label{sec:wob}
 
 A partir da arquitetura proposta na seção \ref{sec:arquitetura} e nos requisitos definidos
-na seção \ref{sec:requisitos} a ferramenta WikiOlapBase foi implementada. Seu objetivo é
-permitir a integração de dados abertos de forma colaborativa. O desenvolvimento foi iniciado
-no dia 2 de junho de 2016 e a primeira versão funcional foi finalizada no dia 22 de setembro
-de 2016, demorando, portanto, 3 meses e 20 dias.
+na seção \ref{sec:requisitos} a ferramenta WikiOlapBase foi implementada. O desenvolvimento 
+foi iniciado no dia 2 de junho de 2016 e a primeira versão funcional foi finalizada no dia 
+22 de setembro de 2016, demorando, portanto, 3 meses e 20 dias.
 
 A ferramenta proposta possui dois módulos: o primeiro é responsável por receber, caracterizar
 e integrar os conjuntos de dados enviados pelos usuários, o segundo permite o acesso a esse 
@@ -159,7 +158,7 @@ Para realizar o armazenamento no Cassandra, é utilizada uma API do Spark, o que
 processo mais rápido e eficaz \cite{kolaczkowski2014}. Já a API REST possui diversos métodos 
 que podem ser acessados para realizar operações como: recuperação de dados, recuperação de 
 metadados e cruzamento entre diferentes bases de dados. Para que o usuário possa recuperar 
-e pré-processar os dados foi utilizada uma API do Spark que realiza essas operações de uma 
+e pré-processar os dados foi utilizada uma API do Spark, que realiza essas operações de uma 
 forma mais rápida \cite{kolaczkowski2014}. A seguir serão detalhados os principais passos 
 do fluxo de execução da ferramenta.
 
@@ -171,7 +170,7 @@ demonstrado nas Figuras \ref{fig:wob-ajuda}, \ref{fig:wob-ajuda2}, \ref{fig:wob-
 \begin{figure}[!htb]
     \centering
     \caption{Interface de instruções do WOB - Passo 1}
-    \includegraphics[width=0.87\textwidth]{./04-figuras/wob-ajuda}
+    \includegraphics[width=0.9\textwidth]{./04-figuras/wob-ajuda}
     \fonte{O Autor}
     \label{fig:wob-ajuda}
 \end{figure}
@@ -179,7 +178,7 @@ demonstrado nas Figuras \ref{fig:wob-ajuda}, \ref{fig:wob-ajuda2}, \ref{fig:wob-
 \begin{figure}[!htb]
     \centering
     \caption{Interface de instruções do WOB - Passo 2}
-    \includegraphics[width=0.87\textwidth]{./04-figuras/wob-ajuda2}
+    \includegraphics[width=0.9\textwidth]{./04-figuras/wob-ajuda2}
     \fonte{O Autor}
     \label{fig:wob-ajuda2}
 \end{figure}
@@ -243,7 +242,7 @@ mostrada na Figura \ref{fig:wob-tags}.
     \label{fig:wob-tags}
 \end{figure}
 
-Por fim o usuário pode identificar hierarquias de dados dentro do conjunto enviado. Essa 
+Por fim, o usuário pode identificar hierarquias de dados dentro do conjunto enviado. Essa 
 informação pode ser utilizada na geração de visualizações que utilizam operações OLAP como 
 \textit{drill down} e \textit{drill up}, a interface pode ser vista na Figura \ref{fig:wob-hierarquia}. 
 Além disso também é disponibilizado ao usuário um \textit{preview} de seu conjunto de dados, 
@@ -271,32 +270,32 @@ fonte\footnote{https://github.com/pedromb/wikiolapbase} já é de domínio públ
 
 Percebe-se que o WikiOlapBase possui algumas características que o diferenciam das outras ferramentas
 mostradas no capítulo \ref{chap:trabRelac}. O Quadro \ref{quadro:comparativo2} mostra um 
-comparativo entre as ferramentas e o WOB.
+comparativo entre as ferramentas e o WOB. \newpage
 
 \begin{quadro}[!htb]
     \centering
-    \caption{Comparação entre os sistemas encontrados na literatura e o WOB}
+    \caption{Comparação entre os sistemas encontrados na literatura}
     \label{quadro:comparativo2}
-    \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+    \begin{tabular}{|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.75cm}|p{1.5cm}|p{1.5cm}|}
         \hline
-Referên- cia & Modelo de Dados                & Forma de acesso aos dados            & Formato de importação dos dados                   & Importação de dados por usuários & Atualização colaborativa da base de dados & Disponibi- lização de metadados & Relacio- namento entre dados \\
+Referência & Modelo de Dados & Forma de acesso aos dados & Formato de importação dos dados & Importa- ção de dados por usuários & Acesso a base de dados de outros usuários & Disponi- bilização de metadados & Cruza- mento entre dados\footnotemark\\
         \hline
-\citeonline{graves2013}          & Linked Data                    & Interface gráfica                    & Não especificado                                  & Não especificado                 & Não especificado                          & Sim      &    Não                     \\
+OpenData- Vis - \citeonline{graves2013} & Linked Data & Interface gráfica & Não especificado & Não especificado & Não especificado & Sim & Não \\
         \hline          
-\citeonline{hoxha2011open}         & Linked Data                    & Interface gráfica e consultas SPARQL & XML, CSV e texto             & Não                              & Não                                       & Sim      &    Não                      \\
+\citeonline{hoxha2011open} & Linked Data & Interface gráfica e consultas SPARQL & Diferentes formatos (XML, CSV, texto) & Não & Não & Sim & Não \\
         \hline
-\citeonline{ding2010data}          & Linked Data                    & Webser- vice SPARQL                    & CSV                                               & Não                              & Não                                       & Sim      &    Não                     \\
+Data-GovWiki - \citeonline{ding2010data} & Linked Data & Web- service SPARQL & CSV & Não & Não & Sim & Não\\
         \hline
-\citeonline{viegas2007}         & Tabela e texto não estruturado & Interface gráfica                    & Texto separado por tabulação.                     & Sim                              & Não                                       & Sim        &    Não                   \\
+Many Eyes - \citeonline{viegas2007} & Tabela e texto não estruturado & Interface gráfica & Texto separado por tabulação. & Sim & Sim & Sim & Não \\
         \hline
-\citeonline{tang2004}         & Relacio- nal                     & API REST                             & CSV, MDX e conexões SQL & Sim                              & Não                                       & Sim          &    Não                 \\
-        \hline 
-WikiOlap
-Base         & Família de Colunas                     & API REST                             & CSV & Sim                              & Sim                                       & Sim                   &    Sim        \\
-        \hline     
+Rivet - \citeonline{tang2004} & Relacional & API REST & CSV, MDX e conexões SQL & Sim & Não & Sim & Não \\
+        \hline
+WikiOlap- Base & Família de colunas & API REST & CSV & Sim & Sim & Sim & Sim \\
+        \hline   
     \end{tabular}
     \fonte{O Autor}
-\end{quadro} 
+\end{quadro}
+\footnotetext{Utilizando dados enviados por outros usuários}
 
 Pode-se observar que o WOB possui dois grandes diferenciais, o primeiro é o aspecto colaborativo,
 já que todo gerenciamento da base de dados é feita pelos próprios usuários. O segundo diferencial

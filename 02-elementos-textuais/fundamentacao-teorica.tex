@@ -20,21 +20,18 @@ que viabilizam, por exemplo, o acesso a dados que uma ferramenta disponibiliza.
 \label{sec:bigdata}
 
 A evolução tecnológica viabilizou um grande aumento na velocidade e quantidade de dados que 
-são gerados diariamente. Esses dados são produzidos em transações online, redes sociais, 
+são gerados diariamente. Esses dados são produzidos em transações \textit{online}, redes sociais, 
 dispositivos móveis, sensores, registros governamentais, entre outros. Esse fenômeno ficou 
 conhecido como \textit{Big Data} \cite{sagiroglu2013big}. 
 
 O termo \textit{Big Data} é caracterizado por três componentes: variedade, volume e velocidade. 
 O primeiro componente se refere a variedade de fontes e tipos dos dados, em geral eles 
-aparecem em três tipos: estruturados, não estruturados e semiestruturados. Dados estruturados 
-são facilmente rotulados e classificados, já dados não estruturados são mais aleatórios e 
-difíceis de serem analisados. Dados semiestruturados não possuem estrutura fixa, mas possuem 
-rótulos para separar elementos. O segundo componente de \textit{Big Data}, o volume, se 
-refere a grande escala na quantidade de dados que são adquiridos, geralmente passando da 
-marca dos \textit{terabytes}. O último elemento, velocidade, se refere ao fato da geração 
-dos dados estar acontecendo permanentemente. Devido a esses três fatores surge uma 
-dificuldade inerente no armazenamento, gerenciamento e análise dos dados no contexto de 
-\textit{Big Data} \cite{sagiroglu2013big}.
+aparecem em três tipos: estruturados, não estruturados e semiestruturados. O segundo componente 
+de \textit{Big Data}, o volume, se refere a grande escala na quantidade de dados que são 
+adquiridos, geralmente passando da marca dos \textit{terabytes}. O último elemento, 
+velocidade, se refere ao fato da geração dos dados estar acontecendo permanentemente. Devido 
+a esses três fatores surge uma dificuldade inerente no armazenamento, gerenciamento e 
+análise de dados no contexto de \textit{Big Data} \cite{sagiroglu2013big}.
 
 Por exemplo, no âmbito de armazenamento, um desafio consiste na modelagem para otimizar o 
 processamento ao qual esses dados serão submetidos. Isso porque, desde os anos 80, o modelo 
@@ -43,7 +40,7 @@ o uso de banco de dados relacional gera diversos problemas, no contexto de \text
 devido a questões como escalabilidade e limitações no armazenamento, não sendo, portanto 
 adequado para esse cenário \cite{moniruzzaman2013nosql}. Assim, novas alternativas que 
 atendessem a novos requisitos de escalabilidade e disponibilidade se fez necessário, de modo 
-a viabilizar empresas e governos a fazer uso do potencial de \textit{Big Data} 
+a viabilizar que empresas e governos possam fazer uso do potencial de \textit{Big Data} 
 \cite{de2010nosql}.
 
 Como solução para esses requisitos surgiram os bancos de dados NoSQL (\textit{Not Only SQL}). 
@@ -58,7 +55,7 @@ Bancos de dados do tipo chave-valor armazenam elementos com uma chave identifica
 respectivo valor, em tabelas conhecidas como \textit{hash tables}. Esses valores podem ser 
 textos comuns ou estruturas, como listas e conjuntos. São ideais para respostas a requisições 
 rápidas, uma vez que a busca é realizada apenas pelos valores das chaves. Os SGBDs não 
-relacionais, do tipo chave-valor, abertos mais conhecidos são o Voldemort, do LinkedIn, e o 
+relacionais abertos, do tipo chave-valor, mais conhecidos são o Voldemort, do LinkedIn, e o 
 Redis \cite{moniruzzaman2013nosql}.
 
 Já os bancos de dados orientados a documentos armazenam uma coleção de atributos e seus 
@@ -68,12 +65,12 @@ apropriada para armazenamento de dados semiestruturados \cite{de2010nosql}.
 Geralmente são codificados em formatos padrão, como \textit{Extensible Markup Language} (XML), 
 \textit{JavaScript Object Notation} (JSON) ou \textit{Binary JSON} (BSON).  Podem ser 
 utilizados, por exemplo, para armazenamento e gerenciamento de representações não normalizadas 
-de entidades, além disso as buscas nesse modelo podem ser feitas tanto por atributos quanto 
+de entidades, além disso, as buscas nesse modelo podem ser feitas tanto por atributos quanto 
 por valores. Os SGBDs desse tipo mais utilizados são o MongoDB e o CouchDB 
 \cite{moniruzzaman2013nosql}.
 
 Na modelagem baseada em grafos os dados são representados como grafos dirigidos. Além disso, 
-as operações sobre os dados fazem uso dos conceitos referente a grafos, como caminhos, 
+as operações sobre os dados fazem uso dos conceitos referentes à grafos, como: caminhos, 
 vizinhos e sub-grafos \cite{de2010nosql}. Em geral esse tipo de modelagem é útil 
 quando se existe interesse tanto no relacionamento, quanto no dado em si. Os SGBDs mais 
 utilizados são o Neo4j, InfoGrid e AllegroGraph \cite{moniruzzaman2013nosql}. Vale ressaltar 
@@ -84,12 +81,13 @@ Consortium} (W3C) para troca de dados na internet \cite{mcbride2001jena}.
 Finalmente, para os casos em que se deseja otimizar a leitura, podem ser usados os bancos de 
 dados de famílias de colunas. Os bancos de dados relacionais convencionais armazenam os dados 
 em linhas, ou seja, todas as informações referentes a uma entidade são armazenadas juntas, 
-no caso do armazenamento colunar, um registro passa a ser armazenado em colunas separadas. 
+já no caso do armazenamento colunar, um registro passa a ser armazenado em colunas separadas. 
 A Figura \ref{fig:db-colunar} mostra uma possível modelagem para esse caso. Esse tipo de 
-armazenamento possui algumas vantagens, como por exemplo a compressão dos dados e a 
+armazenamento possui algumas vantagens, como, por exemplo, a compressão dos dados e a 
 velocidade das operações de leitura. Essa última característica torna os bancos de dados de 
-famílias de colunas ideais para processamento analítico online (OLAP), quando se deseja uma 
-leitura rápida. São exemplos de SGBDs nessa categoria o Cassandra e o HBase \cite{de2010nosql}.
+famílias de colunas ideais para processamento analítico \textit{online} (OLAP), quando se 
+deseja uma leitura rápida. São exemplos de SGBDs nessa categoria o Cassandra e o 
+HBase \cite{de2010nosql}.
 
 \begin{figure}[!htb]
     \centering
@@ -122,6 +120,7 @@ O primeiro, \textit{Hadoop Common}, é um conjunto de utilitários que suporta o
 do Hadoop. O HDFS é um sistema de arquivos distribuído que permite o armazenamento de um 
 grande volume de dados em diversos nodos de um \textit{cluster}. As grandes vantagens do HDFS 
 são: a portabilidade, capacidade de armazenamento, o custo-benefício e a tolerância a falhas. 
+
 O YARN é um \textit{framework} para agendamento de tarefas e gerenciamento de recursos em 
 \textit{cluster}. Por fim, o \textit{Hadoop MapReduce} é um método para distribuir tarefas 
 em múltiplos nodos, o que permite o processamento paralelo e distribuído, tolerante a 

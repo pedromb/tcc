@@ -4,9 +4,8 @@
 Terminado o desenvolvimento do WikiOlapBase foi realizada a avaliação da ferramenta, segundo
 a perspectiva dos usuários. Dois fatores são importantes na ferramenta desenvolvida, primeiro 
 que ela seja adequada a utilização por parte do público alvo e segundo que ela permita a 
-colaboração entre usuários \cite{barbosa2010}. Com o objetivo de avaliar se esses 
-fatores são atendidos foram realizados testes de usabilidade. Neste capítulo são discutidos a 
-metodologia utilizada e os resultados encontrados.
+colaboração entre usuários \cite{barbosa2010}. Neste capítulo são discutidos a 
+metodologia e os resultados da avaliação do WOB na visão de seus usuários.
 
 \section{Metodologia de Avaliação}
 \label{sec:metodologia-avaliacao}
@@ -55,7 +54,7 @@ Apêndice \ref{apendiceA}.
 Em relação às tarefas, é importante ressaltar que foram considerados os principais cenários 
 de interação com o WOB, conforme segue: (T1) aprender a utilizar a ferramenta a partir das 
 instruções presentes na seção de ajuda, (T2) enviar um conjunto de dados no formato CSV, (T3) 
-observar o preview do conjunto de dados, (T4) preencher as informações básicas referentes ao 
+observar o \textit{preview} do conjunto de dados, (T4) preencher as informações básicas referentes ao 
 conjunto de dados, (T5) definir \textit{tags} para as colunas do arquivo enviado e 
 renomeá-las, (T6) definir uma hierarquia de dados dentro do conjunto enviado, (T7) enviar os 
 metadados, (T8) verificar se o conjunto de dados foi incluído no repositório utilizando a 
@@ -67,16 +66,18 @@ A partir dessas tarefas foram definidos três cenários diferentes que envolvem 
 delas, da seguinte forma: (C1) que envolve enviar um conjunto de dados e gerar uma 
 visualização a partir do mesmo, para isso é necessário realizar as tarefas de T1 a T9; 
 (C2) no qual deve-se enviar um conjunto de dados e fazer o cruzamento do mesmo com outro 
-conjunto, já existente no repositório, para gerar uma visualização, para isso é 
+conjunto já existente no repositório para gerar uma visualização, para isso é 
 preciso realizar as tarefas de T1 a T8, e T10; (C3) que envolve utilizar dois conjuntos de 
-dados já existentes no repositório, e gerar uma visualização a partir deles, logo é 
+dados já existentes no repositório e gerar uma visualização a partir deles, logo é 
 necessário realizar as tarefas T8 e T10. 
 
 A fase de execução do teste de usabilidade do WOB contou com a participação de 6 usuários. 
 Desses, 5 possuem formação na área de computação (Engenharia de Computação ou Sistemas de 
 Informação), o último possui formação em Engenharia Mecânica, porém todos atuam na área de 
 desenvolvimento de software. Além disso, 4 possuem alguma experiência com um dos temas: 
-análise de dados, visualização de dados ou mineração de dados.
+análise de dados, visualização de dados ou mineração de dados. É importante ressaltar que
+essa quantidade de usuários se justifica, pois, segundo \citeonline{nielsen2000}, testes de 
+usabilidade devem ser executados por 3 a 5 usuários.
 
 Para cada um dos cenários propostos foram realizados testes com dois usuários diferentes. 
 Para cada tarefa executada por um usuário, o avaliador considerava o tempo gasto em sua 
@@ -106,7 +107,7 @@ o percentual de conclusão de cada tarefa.
 \begin{figure}[!htb]
     \centering
     \caption{Percentual de conclusão das tarefas pelos usuários}
-    \includegraphics[width=1\textwidth]{./04-figuras/avaliacao-tarefas}
+    \includegraphics[width=0.8\textwidth]{./04-figuras/avaliacao-tarefas}
     \fonte{O Autor}
     \label{fig:avaliacao-tarefas}
 \end{figure}
@@ -171,7 +172,7 @@ usuários.
 
 A tarefa T3 apresentou uma pequena variação nos tempos de execução entre os usuários. 
 Nessa tarefa os usuários deveriam verificar o conjunto de dados enviado a partir da 
-funcionalidade “preview”. Durante a avaliação, 3 usuários reportaram dificuldades em 
+funcionalidade “\textit{preview}”. Durante a avaliação, 3 usuários reportaram dificuldades em 
 localizar essa funcionalidade e, além disso, apresentaram sugestões de melhorias para 
 a visibilidade dessa função. Embora esse tenha sido considerado um problema cosmético, 
 as sugestões apontadas pelos usuários serão implementadas na próxima versão do WOB.
@@ -189,7 +190,7 @@ corrigidos em versões futuras da ferramenta para melhorar a usabilidade do sist
 A tarefa T6, embora tenha sido concluída sem erros por todos usuários, também apresentou 
 problemas, o que fica claro com a variação entre os tempos de execução. Nessa tarefa 
 deveria ser especificada uma hierarquia de dados dentro do conjunto de dados enviado. 
-Dois usuários reportaram a falta de feedback ao se definir a hierarquia, ou seja, não era 
+Dois usuários reportaram a falta de \textit{feedback} ao se definir a hierarquia, ou seja, não era 
 possível saber se a hierarquia havia sido salva ou não. Esse problema também será corrigido 
 em uma futura versão da ferramenta.
 
@@ -249,7 +250,7 @@ Através dos dados apresentados é possível observar que, nos três cenários, 
 foi julgado como “não atende”, na perspectiva dos usuários, ou seja, para todos os usuários 
 todos os princípios são atendidos ou não são aplicáveis. Foi possível perceber que para 
 66.67\% dos usuários o WOB atende completamente o princípio de facilidade de aprendizado, no 
-entanto para apenas 16.67\% o princípio de facilidade de uso é atendido completamente. Isso 
+entanto, para apenas 16.67\% o princípio de facilidade de uso é atendido completamente. Isso 
 mostra que na visão desses usuários, embora, inicialmente, o WOB não apresente uma fácil 
 utilização, aprender como utilizá-lo é uma tarefa simples. 
 
