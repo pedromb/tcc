@@ -10,7 +10,7 @@ trabalho. A primeira seção define o conceito de \textit{Big Data}, e discute c
 cenário impulsionou o desenvolvimento de soluções para armazenamento, e gerenciamento de 
 grandes volumes de dados. Também serão analisados novos modelos de dados e sistemas de 
 gerenciamento de banco de dados (SGBDs), que surgiram como alternativa para os modelos 
-convencionais no contexto de \textit{Big Data}. A seção \ref{sec:spark} fala 
+convencionais, no contexto de \textit{Big Data}. A seção \ref{sec:spark} fala 
 sobre ferramentas auxiliares, que podem ser utilizadas para processar grandes volumes de dados,
 especificamente serão apresentadas as plataformas Hadoop e Spark. Por fim, a seção 
 \ref{sec:api}, trata sobre \textit{web services}, soluções para comunicação entre aplicações, 
@@ -119,7 +119,8 @@ Hadoop é composto por quatro módulos:(1) \textit{Hadoop Common}, (2)
 O primeiro, \textit{Hadoop Common}, é um conjunto de utilitários que suporta os outros módulos
 do Hadoop. O HDFS é um sistema de arquivos distribuído que permite o armazenamento de um 
 grande volume de dados em diversos nodos de um \textit{cluster}. As grandes vantagens do HDFS 
-são: a portabilidade, capacidade de armazenamento, o custo-benefício e a tolerância a falhas. 
+são: a portabilidade, capacidade de armazenamento, o custo-benefício e a tolerância a falhas 
+\cite{kumar2014apache}.
 
 O YARN é um \textit{framework} para agendamento de tarefas e gerenciamento de recursos em 
 \textit{cluster}. Por fim, o \textit{Hadoop MapReduce} é um método para distribuir tarefas 
@@ -133,13 +134,14 @@ Já o Apache Spark\footnote{http://spark.apache.org/}, ou simplesmente Spark, é
 de propósito geral para processamento em \textit{cluster}, que realiza operações em memória. 
 Esta característica permite o aceleramento da análise de dados, tornando mais rápido, 
 tanto as operações de escrita quanto o processamento de dados. Em alguns casos o Spark pode ser 
-até cem vezes mais rápido que o Hadoop. Além disso, o Spark possui APIs para diversas 
-linguagens de programação, como Python, Java, Scala e R. Outra vantagem, é a existência de 
-diversas ferramentas de alto nível que auxiliam no processamento de dados, como por exemplo 
-a M Lib, uma biblioteca para aprendizado de máquina e o Spark SQL, uma biblioteca que 
-permite, entre outras coisas, a realização de operações como \textit{join} e 
-\textit{order by} em qualquer conjunto de dados, mesmo aqueles originários de bancos de 
-dados NoSQL \cite{shoro2015big}.
+até cem vezes mais rápido que o Hadoop. 
+
+Além disso, o Spark possui APIs para diversas linguagens de programação, como Python, Java, 
+Scala e R. Outra vantagem, é a existência de diversas ferramentas de alto nível que auxiliam 
+no processamento de dados, como por exemplo a M Lib, uma biblioteca para aprendizado de 
+máquina e o Spark SQL, uma biblioteca que permite, entre outras coisas, a realização de 
+operações como \textit{join} e \textit{order by} em qualquer conjunto de dados, mesmo 
+aqueles originários de bancos de dados NoSQL \cite{shoro2015big}.
 
 Assim, dada uma fonte de dados NoSQL é possível utilizar o Hadoop ou Spark para acessar,
 processar e até mesmo alimentar essa fonte. Por fim, deve-se permitir o acesso aos dados
