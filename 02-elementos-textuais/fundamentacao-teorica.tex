@@ -6,7 +6,7 @@
 \label{chap:fundamentacaoTeorica}
 
 Neste capítulo são discutidos conceitos fundamentais para o melhor entendimento deste 
-trabalho. A primeira seção define o conceito de \textit{Big Data}, e discute como esse 
+trabalho. A primeira seção define o conceito de \textit{Big Data} e discute como esse 
 cenário impulsionou o desenvolvimento de soluções para armazenamento, e gerenciamento de 
 grandes volumes de dados. Também serão analisados novos modelos de dados e sistemas de 
 gerenciamento de banco de dados (SGBDs), que surgiram como alternativa para os modelos 
@@ -14,7 +14,7 @@ convencionais, no contexto de \textit{Big Data}. A seção \ref{sec:spark} fala
 sobre ferramentas auxiliares, que podem ser utilizadas para processar grandes volumes de dados,
 especificamente serão apresentadas as plataformas Hadoop e Spark. Por fim, a seção 
 \ref{sec:api}, trata sobre \textit{web services}, soluções para comunicação entre aplicações, 
-que viabilizam, por exemplo, o acesso a dados que uma ferramenta disponibiliza.
+que viabilizam, por exemplo, o acesso a dados que uma ferramenta disponibiliza. 
 
 \section{Big Data e NoSQL}
 \label{sec:bigdata}
@@ -39,28 +39,27 @@ de dados relacional tem dominado o mercado em diversas implementações de SGBDs
 o uso de banco de dados relacional gera diversos problemas, no contexto de \textit{Big Data}, 
 devido a questões como escalabilidade e limitações no armazenamento, não sendo, portanto 
 adequado para esse cenário \cite{moniruzzaman2013nosql}. Assim, novas alternativas que 
-atendessem a novos requisitos de escalabilidade e disponibilidade se fez necessário, de modo 
+atendessem a novos requisitos de escalabilidade e disponibilidade se fizeram necessários, de modo 
 a viabilizar que empresas e governos possam fazer uso do potencial de \textit{Big Data} 
 \cite{de2010nosql}.
 
 Como solução para esses requisitos surgiram os bancos de dados NoSQL (\textit{Not Only SQL}). 
-Em geral esses bancos compartilham as seguintes características: não relacional, distribuído, 
+Em geral, esses bancos compartilham as seguintes características: não relacional, distribuído, 
 escalável, sem esquema ou com esquemas flexíveis, suporte a replicação nativo e acesso 
 através de interfaces de programação de aplicativos (APIs) \cite{de2010nosql}. 
-Existem diversos modelos de banco de dados NoSQL, em seguida serão discutidos os tipos mais 
-comuns, são eles: chave-valor, orientado a documentos, grafos e família de colunas 
+Existem diversos modelos de banco de dados NoSQL. Em seguida, serão discutidos os tipos mais 
+comuns: chave-valor, orientado a documentos, grafos e família de colunas 
 \cite{de2010nosql}.
 
 Bancos de dados do tipo chave-valor armazenam elementos com uma chave identificadora, e seu 
 respectivo valor, em tabelas conhecidas como \textit{hash tables}. Esses valores podem ser 
 textos comuns ou estruturas, como listas e conjuntos. São ideais para respostas a requisições 
-rápidas, uma vez que a busca é realizada apenas pelos valores das chaves. Os SGBDs não 
-relacionais abertos, do tipo chave-valor, mais conhecidos são o Voldemort, do LinkedIn, e o 
-Redis \cite{moniruzzaman2013nosql}.
+rápidas, uma vez que a busca é realizada apenas pelos valores das chaves. Os SGBDs do
+tipo chave-valor, mais conhecidos são o Voldemort, do LinkedIn, e o Redis \cite{moniruzzaman2013nosql}.
 
 Já os bancos de dados orientados a documentos armazenam uma coleção de atributos e seus 
 valores, estes últimos podendo ser multivalorados. Em geral não possuem estrutura fixa, 
-ou seja, diferentes documentos podem ter diferentes estruturas, o que os torna uma escolha 
+ou seja, documentos semelhantes podem ter diferentes estruturas, o que os torna uma escolha 
 apropriada para armazenamento de dados semiestruturados \cite{de2010nosql}. 
 Geralmente são codificados em formatos padrão, como \textit{Extensible Markup Language} (XML), 
 \textit{JavaScript Object Notation} (JSON) ou \textit{Binary JSON} (BSON).  Podem ser 
@@ -69,13 +68,13 @@ de entidades, além disso, as buscas nesse modelo podem ser feitas tanto por atr
 por valores. Os SGBDs desse tipo mais utilizados são o MongoDB e o CouchDB 
 \cite{moniruzzaman2013nosql}.
 
-Na modelagem baseada em grafos os dados são representados como grafos dirigidos. Além disso, 
+Na modelagem baseada em grafos, os dados são representados como grafos dirigidos. Além disso, 
 as operações sobre os dados fazem uso dos conceitos referentes à grafos, como: caminhos, 
-vizinhos e sub-grafos \cite{de2010nosql}. Em geral esse tipo de modelagem é útil 
-quando se existe interesse tanto no relacionamento, quanto no dado em si. Os SGBDs mais 
+vizinhos e sub-grafos \cite{de2010nosql}. Em geral, esse tipo de modelagem é útil 
+quando existe interesse tanto no relacionamento, quanto no dado em si. Os SGBDs mais 
 utilizados são o Neo4j, InfoGrid e AllegroGraph \cite{moniruzzaman2013nosql}. Vale ressaltar 
 também o SGBD Jena, que implementa uma API para criação e manipulação de grafos no formato 
-\textit{Resource Description Framework} (RDF), modelo proposto pela \textit{World Wide Web 
+\textit{Resource Description Framework} (RDF), formato proposto pela \textit{World Wide Web 
 Consortium} (W3C) para troca de dados na internet \cite{mcbride2001jena}.
 
 Finalmente, para os casos em que se deseja otimizar a leitura, podem ser usados os bancos de 
@@ -102,8 +101,8 @@ Cada modelo de dados possui suas vantagens e desvantagens, e a melhor escolha de
 se deseja alcançar. Apesar das modelagens e SGBDs não relacionais possuirem claras vantagens,  
 elas ainda possuem certas limitações. Por exemplo, a maioria das implementações NoSQL não
 suportam as operações \textit{join} e \textit{order by} \cite{pokorny2013nosql}. 
-Nesse contexto surgem outras plataformas, para auxiliar no processamento de grandes volumes 
-de dados, e que possuem uma comunicação natural com bancos de dados NoSQL. Na próxima seção 
+Nesse contexto, surgem outras plataformas, para auxiliar no processamento de grandes volumes 
+de dados, e que possuem uma comunicação natural com bancos de dados NoSQL. Na próxima seção, 
 são apresentadas duas dessas plataformas, o Hadoop e o Spark.
 
 \section{Hadoop e Spark}
@@ -132,7 +131,7 @@ velocidade \cite{shoro2015big}.
 
 Já o Apache Spark\footnote{http://spark.apache.org/}, ou simplesmente Spark, é uma ferramenta 
 de propósito geral para processamento em \textit{cluster}, que realiza operações em memória. 
-Esta característica permite o aceleramento da análise de dados, tornando mais rápido, 
+Essa característica permite o aceleramento da análise de dados, tornando mais rápido, 
 tanto as operações de escrita quanto o processamento de dados. Em alguns casos o Spark pode ser 
 até cem vezes mais rápido que o Hadoop. 
 
@@ -154,9 +153,8 @@ já processados que são armazenados, isso pode ser realizado utilizando \textit
 A troca de informações entre aplicações distribuídas na web é feita através de protocolos de 
 comunicação \cite{schepke2010avaliaccao}. Estes protocolos permitem, entre outras operações, a 
 recuperação de dados de aplicações que possuem esse acesso liberado. Serão discutidos duas 
-das formas de comunicação, conhecidas como \textit{web services}, mais utilizadas, o 
-\textit{Simple Object Access Protocol (SOAP)}, e o \textit{Representational State 
-Transfer (REST)} \cite{lima2012}.
+das formas de comunicação, conhecidas como \textit{web services}, o 
+\textit{Simple Object Access Protocol (SOAP)}, e o \textit{Representational State Transfer (REST)} \cite{lima2012}.
 
 O SOAP é um protocolo adotado pela W3C, que permite invocar aplicações remotas independente de 
 linguagem de programação e plataforma. O protocolo é baseado em XML, e utiliza o 

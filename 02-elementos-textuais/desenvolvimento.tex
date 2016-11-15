@@ -1,9 +1,9 @@
 \chapter{Desenvolvimento}
 \label{chap:desenvolvimento}
 
-Neste capítulo serão apresentadas todas as etapas referentes ao desenvolvimento da ferramenta
+Neste capítulo, serão apresentadas todas as etapas referentes ao desenvolvimento da ferramenta
 WikiOlapBase (WOB), que permite a integração de dados abertos de forma colaborativa. Na seção
-\ref{sec:requisitos} serão explicitados os requisitos levantados para a ferramenta. 
+\ref{sec:requisitos}, serão explicitados os requisitos levantados para a ferramenta. 
 Posteriormente, na seção \ref{sec:arquitetura}, será mostrada a arquitetura proposta para o 
 WOB. Finalmente, na seção \ref{sec:wob}, a ferramenta será apresentada, ainda nessa seção será 
 apresentada uma análise comparativa entre o WOB e as ferramentas encontradas na literatura.
@@ -11,7 +11,7 @@ apresentada uma análise comparativa entre o WOB e as ferramentas encontradas na
 \section{Levantamento de Requisitos}
 \label{sec:requisitos}
 
-Na etapa de Levantamento de Requisitos foram definidas as funcionalidades e características 
+Na etapa de Levantamento de Requisitos, foram definidas as funcionalidades e características 
 do software proposto. Esse levantamento ocorreu a partir da revisão da literatura e através 
 de uma reunião de \textit{brainstorming}, no dia 29 de abril de 2016, com três especialistas 
 que possuem mais de oito anos de experiência na área de processamento e análise de dados. 
@@ -49,8 +49,8 @@ O resultado gerado foi a lista de requisitos, mostrada no Quadro \ref{quadro:req
     \fonte{O Autor}
 \end{quadro}
 
-A partir dos requisitos levantados foi possível escolher as tecnologias, bem como propor uma 
-arquitetura, para o desenvolvimento da solução. Na seção a seguir essas escolhas são expostas 
+A partir dos requisitos levantados, foi possível escolher as tecnologias, bem como propor uma 
+arquitetura, para o desenvolvimento da solução. Na seção a seguir, essas escolhas são expostas 
 e justificadas.
 
 \section{Arquitetura do WikiOlapBase}
@@ -108,7 +108,7 @@ de grandes volumes de dados é uma característica desejada \cite{moniruzzaman20
 
 Além dos conjuntos de dados que serão armazenados pela ferramenta, também foi necessário 
 registrar os metadados referentes a esses conjuntos, de modo que seja possível 
-caracterizá-los. Metadados são comumente definidos como dados sobre dados, no entanto, vão 
+caracterizá-los. Metadados são comumente definidos como dados sobre dados. No entanto, vão 
 além dessa definição. Eles permitem ao usuário, ou um computador, procurar e gerenciar 
 informações, definir as regras para uma estrutura de dados e integrar dados de diferentes 
 fontes \cite{turner2002metadata}. Desse modo, para o armazenamento dos metadados, foi 
@@ -120,12 +120,11 @@ O SGBD utilizado para implementar e gerenciar o modelo de família de colunas fo
 Cassandra, já o modelo orientado a documentos foi implementado no MongoDB. 
 Segundo o site db-engines.com (2016), esses dois SGBDs estão entre os dez mais utilizados, 
 sendo os primeiros colocados em suas categorias. Isso demonstra a popularidade e aceitação 
-da comunidade em relação a essas ferramentas, o que justifica suas escolhas. Devido as 
-limitações dos bancos de dados NoSQL, já explorada anteriormente neste trabalho 
-(na Seção \ref{sec:bigdata}), também foi utilizada a plataforma Spark para realizar uma 
-interface com o Cassandra. A utilização do Spark permite a realização de operações mais 
-complexas sobre os dados, além de tornar ainda mais rápida a leitura e escrita de dados 
-sobre o Cassandra \cite{kolaczkowski2014}.
+da comunidade em relação a essas ferramentas, o que justifica suas escolhas. Devido às 
+limitações dos bancos de dados NoSQL, já explorada anteriormente (na Seção \ref{sec:bigdata}), 
+também foi utilizada a plataforma Spark para realizar uma interface com o Cassandra. A 
+utilização do Spark permite a realização de operações mais complexas sobre os dados, além de 
+tornar ainda mais rápida a leitura e escrita de dados sobre o Cassandra \cite{kolaczkowski2014}.
 
 Finalmente, para o acesso aos dados, foi disponibilizado uma API REST, devido a sua 
 simplicidade e adequação natural a web \cite{maleshkova2010}. A Figura \ref{fig:arquitetura} apresenta o 
@@ -165,12 +164,19 @@ do fluxo de execução da ferramenta.
 O fluxo de execução principal do WOB é composto por quatro passos, para facilitar o 
 aprendizado do usuário foi elaborada uma interface que explica esses passos, conforme
 demonstrado nas Figuras \ref{fig:wob-ajuda}, \ref{fig:wob-ajuda2}, \ref{fig:wob-ajuda3} e
- \ref{fig:wob-ajuda4}.
+\ref{fig:wob-ajuda4}. A Figura \ref{fig:wob-ajuda} mostra como realizar o primeiro passo de execução 
+da ferramenta, quando o arquivo referente ao conjunto de dados é enviado. Em seguida, a 
+Figura \ref{fig:wob-ajuda2} mostra como realizar o segundo passo de execução, na qual o
+usuário deve preencher informações básicas sobre o conjunto sendo enviado. Já a Figura \ref{fig:wob-ajuda3} 
+mostra como executar o terceiro passo de execução, nessa etapa é possível renomear colunas e 
+adicionar \textit{tags} a cada coluna. Por fim, a Figura \ref{fig:wob-ajuda4} mostra como 
+executar o último passo, na qual é possível adicionar hierarquias de dados ao
+conjunto sendo salvo.
 
 \begin{figure}[!htb]
     \centering
     \caption{Interface de instruções do WOB - Passo 1}
-    \includegraphics[width=0.9\textwidth]{./04-figuras/wob-ajuda}
+    \includegraphics[width=0.7\textwidth]{./04-figuras/wob-ajuda}
     \fonte{O Autor}
     \label{fig:wob-ajuda}
 \end{figure}
@@ -178,7 +184,7 @@ demonstrado nas Figuras \ref{fig:wob-ajuda}, \ref{fig:wob-ajuda2}, \ref{fig:wob-
 \begin{figure}[!htb]
     \centering
     \caption{Interface de instruções do WOB - Passo 2}
-    \includegraphics[width=0.9\textwidth]{./04-figuras/wob-ajuda2}
+    \includegraphics[width=0.7\textwidth]{./04-figuras/wob-ajuda2}
     \fonte{O Autor}
     \label{fig:wob-ajuda2}
 \end{figure}
@@ -186,7 +192,7 @@ demonstrado nas Figuras \ref{fig:wob-ajuda}, \ref{fig:wob-ajuda2}, \ref{fig:wob-
 \begin{figure}[!htb]
     \centering
     \caption{Interface de instruções do WOB - Passo 3}
-    \includegraphics[width=1\textwidth]{./04-figuras/wob-ajuda3}
+    \includegraphics[width=0.7\textwidth]{./04-figuras/wob-ajuda3}
     \fonte{O Autor}
     \label{fig:wob-ajuda3}
 \end{figure}
@@ -194,7 +200,7 @@ demonstrado nas Figuras \ref{fig:wob-ajuda}, \ref{fig:wob-ajuda2}, \ref{fig:wob-
 \begin{figure}[!htb]
     \centering
     \caption{Interface de instruções do WOB - Passo 4}
-    \includegraphics[width=1\textwidth]{./04-figuras/wob-ajuda4}
+    \includegraphics[width=0.7\textwidth]{./04-figuras/wob-ajuda4}
     \fonte{O Autor}
     \label{fig:wob-ajuda4}
 \end{figure}
@@ -209,7 +215,7 @@ que desejar.
 \begin{figure}[!htb]
     \centering
     \caption{Interface para envio de arquivo do WOB}
-    \includegraphics[width=1\textwidth]{./04-figuras/wob-sendfile}
+    \includegraphics[width=1.1\textwidth]{./04-figuras/wob-sendfile}
     \fonte{O Autor}
     \label{fig:wob-sendfile}
 \end{figure}
@@ -237,7 +243,7 @@ mostrada na Figura \ref{fig:wob-tags}.
 \begin{figure}[!htb]
     \centering
     \caption{Interface para preenchimento de tags do WOB}
-    \includegraphics[width=1\textwidth]{./04-figuras/wob-tags}
+    \includegraphics[width=0.9\textwidth]{./04-figuras/wob-tags}
     \fonte{O Autor}
     \label{fig:wob-tags}
 \end{figure}
@@ -251,7 +257,7 @@ desse modo ele pode verificar se não ocorreu um erro ao enviar seu arquivo.
 \begin{figure}[!htb]
     \centering
     \caption{Interface para indentificação de hierarquias do WOB}
-    \includegraphics[width=1\textwidth]{./04-figuras/wob-hierarquia}
+    \includegraphics[width=0.85\textwidth]{./04-figuras/wob-hierarquia}
     \fonte{O Autor}
     \label{fig:wob-hierarquia}
 \end{figure}
@@ -270,7 +276,7 @@ fonte\footnote{https://github.com/pedromb/wikiolapbase} já é de domínio públ
 
 Percebe-se que o WikiOlapBase possui algumas características que o diferenciam das outras ferramentas
 mostradas no capítulo \ref{chap:trabRelac}. O Quadro \ref{quadro:comparativo2} mostra um 
-comparativo entre as ferramentas e o WOB. \newpage
+comparativo entre as ferramentas e o WOB.
 
 \begin{quadro}[!htb]
     \centering
@@ -302,6 +308,14 @@ já que todo gerenciamento da base de dados é feita pelos próprios usuários. 
 é a possibilidade de relacionar conjuntos de dados que estão disponíveis no repositório. 
 Já um aspecto a ser melhorado pelo WOB é a disponibilidade de importação de dados em 
 diferentes formatos, já que na versão inicial só está disponível o formato CSV.
+
+É possível perceber que dos requisitos levantados na seção \ref{sec:requisitos} nem todos foram
+atendidos. No entanto, aqueles que permitem o fluxo de execução básico e tornam a plataforma
+funcional foram implementados, são eles: permitir a importação de dados de forma a manter o
+significado dos dados originais; converter formatos de arquivos diferentes para o modelo de dados
+definido; permitir o acesso aos dados presentes na base integrada; permitir a definição de metadados. 
+Já os requisitos não funcionais não foram medidos. No entanto, a arquitetura foi desenhada de modo
+a atender tais requisitos.
 
 Após o desenvolvimento da ferramenta foi realizada de uma avaliação de usabilidade,
 com o objetivo de determinar se a ferramenta está adequada ao uso por parte do público alvo.

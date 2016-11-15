@@ -69,7 +69,26 @@ visualização a partir do mesmo, para isso é necessário realizar as tarefas d
 conjunto já existente no repositório para gerar uma visualização, para isso é 
 preciso realizar as tarefas de T1 a T8, e T10; (C3) que envolve utilizar dois conjuntos de 
 dados já existentes no repositório e gerar uma visualização a partir deles, logo é 
-necessário realizar as tarefas T8 e T10. 
+necessário realizar as tarefas T8 e T10.
+
+Para a realização dos cenários de avaliação, os usuários utilizaram dois conjuntos de dados de teste.
+O primeiro conjunto é referente a série histórica da contribuição provisória sobre movimentações
+financeiras (CPMF), e o segundo referente a série histórica do índice nacional de preços ao
+consumidor amplo (IPCA), um índice tipicamente ligado aos níveis de inflação. 
+Esses dados foram obtidos no \textit{website} do Instituto de Pesquisa Econômica Aplicada 
+(IPEA), uma fundação pública federal vinculada ao Ministério do Planejamento, Desenvolvimento e 
+Gestão. Esses conjuntos de dados são exemplos de dados abertos que podem ser integrados no 
+WikiOlapBase. A Figura \ref{fig:visualizacao} mostra o resultado da execução do cenário C3. 
+Nela podemos ver o resultado do cruzamento entre os dois conjuntos de dados utilizados, isso 
+permite avaliar, por exemplo, a relação entre a cobrança da CPMF e o aumento da inflação.
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Visualização gerada na execução do cenário 3}
+    \includegraphics[width=0.8\textwidth]{./04-figuras/visualizacao}
+    \fonte{O Autor}
+    \label{fig:visualizacao}
+\end{figure}
 
 A fase de execução do teste de usabilidade do WOB contou com a participação de 6 usuários. 
 Desses, 5 possuem formação na área de computação (Engenharia de Computação ou Sistemas de 
@@ -124,31 +143,33 @@ exibidos os tempos totais de execução das tarefas por cada usuário.
     \centering
     \caption{ Relação de tempo decorrido em minutos para cada uma das tarefas em cada teste de usabilidade}
     \label{table:tempos-execucao}
-    \begin{tabular}{|p{1.5cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.5cm}|}
+    \begin{tabular}{|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.5cm}|p{1.2cm}|}
         \hline
-        Tarefa & U1 & U2 & U3 & U4 & U5 & U6 & Total de Usuários & Tempo Médio \\
+        &  \multicolumn{2}{p{2.4cm}|}{Cenário 1} & \multicolumn{2}{p{2.4cm}|}{Cenário 2} & \multicolumn{2}{p{2.4cm}|}{Cenário 3} & & &\\
         \hline
-        T1 & 01:07 & 03:09 & 01:56 & 01:20 & 00:00 & 00:00 & 4 & 01:53 \\
+        Tarefa & U1 & U2 & U3 & U4 & U5 & U6 & Total de Usuários & Tempo Médio & Desvio Padrão \\
         \hline
-        T2 & 00:18 & 00:31 & 00:27 & 00:20 & 00:00 & 00:00 & 4 & 00:24 \\          
+        T1 & 01:07 & 03:09 & 01:56 & 01:20 & 00:00 & 00:00 & 4 & 01:53 & 00:55 \\
         \hline
-        T3 & 01:18 & 00:40 & 00:29 & 00:15 & 00:00 & 00:00 & 4 & 00:40 \\
+        T2 & 00:18 & 00:31 & 00:27 & 00:20 & 00:00 & 00:00 & 4 & 00:24 & 00:06\\          
         \hline
-        T4 & 01:22 & 01:01 & 00:51 & 01:38 & 00:00 & 00:00 & 4 & 01:13 \\
+        T3 & 01:18 & 00:40 & 00:29 & 00:15 & 00:00 & 00:00 & 4 & 00:40 & 00:27 \\
         \hline
-        T5 & 02:23 & 00:36 & 01:18 & 02:01 & 00:00 & 00:00 & 4 & 01:34 \\
+        T4 & 01:22 & 01:01 & 00:51 & 01:38 & 00:00 & 00:00 & 4 & 01:13 & 00:21\\
         \hline
-        T6 & 02:06 & 00:41 & 02:07 & 00:57 & 00:00 & 00:00 & 4 & 01:27 \\
+        T5 & 02:23 & 00:36 & 01:18 & 02:01 & 00:00 & 00:00 & 4 & 01:34 & 00:47\\
         \hline
-        T7 & 00:24 & 00:04 & 00:10 & 00:05 & 00:00 & 00:00 & 4 & 00:10 \\
+        T6 & 02:06 & 00:41 & 02:07 & 00:57 & 00:00 & 00:00 & 4 & 01:27 & 00:45\\
         \hline
-        T8 & 00:52 & 00:35 & 01:13 & 01:29 & 01:11 & 00:54 & 6 & 01:02 \\
+        T7 & 00:24 & 00:04 & 00:10 & 00:05 & 00:00 & 00:00 & 4 & 00:10 & 00:09\\
         \hline
-        T9 & 03:18 & 03:04 & 00:00 & 00:00 & 00:00 & 00:00 & 2 & 03:11 \\
+        T8 & 00:52 & 00:35 & 01:13 & 01:29 & 01:11 & 00:54 & 6 & 01:02 & 00:19\\
         \hline
-        T10 & 00:00 & 00:00 & 03:35 & 03:52 & 04:33 & 04:13 & 4 & 04:03 \\
+        T9 & 03:18 & 03:04 & 00:00 & 00:00 & 00:00 & 00:00 & 2 & 03:11 & 00:10\\
+        \hline
+        T10 & 00:00 & 00:00 & 03:35 & 03:52 & 04:33 & 04:13 & 4 & 04:03 & 00:25\\
         \hline 
-        Total & 13:08 & 10:21 & 12:06 & 11:57 & 05:44 & 05:07 & - & - \\
+        Total & 13:08 & 10:21 & 12:06 & 11:57 & 05:44 & 05:07 & - & - & -\\
         \hline   
     \end{tabular}
     \fonte{O Autor}
@@ -207,19 +228,41 @@ experientes no futuro, pois o acesso direto a API não será necessário.
 Conforme mencionado anteriormente, depois de executadas as tarefas, cada usuário avaliou a 
 ferramenta sob a perspectiva dos 07 princípios de usabilidade \cite{nielsen1994usability}, 
 além dos 02 princípios de colaboração definidos especificamente para essa ferramenta, são 
-eles: (1) colaboração passiva e (2) colaboração ativa. Para que seja realizada uma análise 
-mais assertiva, as respostas foram separadas de acordo com o cenário para o qual cada usuário 
-foi submetido, dessa forma a Figura \ref{fig:avaliacao-cenario1} sumariza as respostas para os 
-usuários que realizaram o cenário C1, a Figura \ref{fig:avaliacao-cenario2} para os usuários 
-que realizaram o cenário C2 e a Figura \ref{fig:avaliacao-cenario3} para os usuários que 
-realizaram o cenário C3
+eles: (1) colaboração passiva e (2) colaboração ativa.
 
 O termo colaboração passiva se refere a utilizar um conjunto de dados já existente, ou 
 seja, o grau com que o sistema permite que usuários utilizem conjuntos de dados que foram 
 enviados por outros usuários, já o termo colaboração ativa se refere a enviar um conjunto 
 de dados para outra pessoa utilizar, ou seja, o grau com que o sistema incentiva a 
 colaboração entre usuários, mostrando que ao enviar um conjunto de dados ele estará 
-disponível para qualquer um utilizar. 
+disponível para qualquer um utilizar. O Quadro \ref{quadro:principios} sumariza os 07 princípios
+de usablidade e os 02 princípios de colaboração.
+
+\begin{quadro}[]
+\centering
+\caption{Princípios de Usabilidade e Colaboração}
+\label{quadro:principios}
+\begin{tabular}{|p{2cm}|p{13cm}|}
+\hline
+Princípio                 & Descrição                                                                                                                                                                                                                                                                \\ \hline
+Facilidade de Aprendizado & \begin{tabular}[c]{@{}l@{}}Se refere ao tempo e esforço necessários para que os usuários aprendam \\ a utilizar uma determinada porção do sistema com bom nível de \\ competência e desempenho.\end{tabular}                                                                \\ \hline
+Facilidade de Uso         & \begin{tabular}[c]{@{}l@{}}Está relacionado não apenas com o esforço cognitivo para interagir com \\ o sistema, mas também com a facilidade de completar a interação sem \\cometer erros durante este processo.\end{tabular}                                               \\ \hline
+Flexível                  & \begin{tabular}[c]{@{}l@{}}Considera o quanto um sistema é capaz de acomodar caminhos distintos \\ para se atingir um mesmo objetivo, apoiando assim as preferências e \\modo de trabalho individuais dos usuários.\end{tabular}                                           \\ \hline
+Produtivo                 & \begin{tabular}[c]{@{}l@{}}Analisa se o sistema consegue fazer bem aquilo a que se destina, e se o \\ usuário completa suas tarefas de  forma rápida e eficaz.\end{tabular}                                                                                               \\ \hline
+Satisfatório              & \begin{tabular}[c]{@{}l@{}}Enfatiza a avaliação subjetiva do sistema feita pelo usuário, incluindo suas \\ preferências pessoais e emoções (positivas ou negativas) que possam \\surgir durante a interação.\end{tabular}                                                  \\ \hline
+Útil                      & Relativo ao conjunto de funcionalidades oferecidas ao sistema para que os usuários realizem suas tarefas.                                                                                                                                                                \\ \hline
+Seguro                    & \begin{tabular}[c]{@{}l@{}}Se refere ao grau de proteção de um sistema contra condições desfavorá-\\veis ou até mesmo perigosas para os usuários, envolvendo desde \\aspectos de recuperação de condições de erro até impacto no seu \\ trabalho ou sua saúde.\end{tabular} \\ \hline
+Colaboração Ativa         & \begin{tabular}[c]{@{}l@{}}Se refere ao grau com que o sistema incentiva a colaboração entre usuá-\\rios, mostrando que ao enviar um conjunto de dados eles estará \\disponível para qualquer um utilizar.\end{tabular}                                                    \\ \hline
+Colaboração Passiva       & \begin{tabular}[c]{@{}l@{}}Se refere ao grau com que o sistema permite que usuários utilizem \\ conjuntos de dados que foram enviados por outros usuários.\end{tabular}                                                                                                  \\ \hline
+\end{tabular}
+\end{quadro} 
+
+Para que seja realizada uma análise mais assertiva, as respostas foram separadas de acordo 
+com o cenário para o qual cada usuário foi submetido, dessa forma a 
+Figura \ref{fig:avaliacao-cenario1} sumariza as respostas para os usuários que realizaram o 
+cenário C1, a Figura \ref{fig:avaliacao-cenario2} para os usuários que realizaram o 
+cenário C2 e a Figura \ref{fig:avaliacao-cenario3} para os usuários que realizaram o 
+cenário C3.
 
 \begin{figure}[!htb]
     \centering
